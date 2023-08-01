@@ -1,0 +1,15 @@
+VITE:
+    npm create vite@latest ./ -- --template react
+
+
+Tailwind CSS:
+    npm install -D tailwindcss
+    npx tailwindcss init
+
+    * IMPORTANT *
+    To run tailwind with vite use the below two commands, otherwise tailwind will not work
+        npm install -D tailwindcss postcss autoprefixer
+        npx tailwindcss init -p
+
+some libraries:
+    npm install --legacy-peer-deps @react-three/fiber @react-three/drei maath react-tilt react-vertical-timeline-component @emailjs/browser framer-motion react-router-dom react-parallax-tilt
