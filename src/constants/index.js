@@ -116,7 +116,7 @@ import {
   
   const experiences = [
     {
-      title: "Software Developer Enginner",
+      title: "Software Developer Engineer",
       company_name: "DP WORLD",
       icon: dp_world,
       iconBg: "#383E56",
@@ -145,7 +145,7 @@ import {
       company_name: "TCS Research",
       icon: tcs,
       iconBg: "#383E56",
-      date: "May 2022 - July 202",
+      date: "May 2022 - July 2022",
       points: [
         "Technology landscape assessment: Conducted a comprehensive assessment of the evolving technology landscape, analyzing trends, and identifying disruptive innovations that could impact TCS's business and industry.",
         "Feasibility studies: Performed detailed feasibility studies on the identified emerging technologies to assess their practicality, cost-effectiveness, and potential implementation challenges.",
