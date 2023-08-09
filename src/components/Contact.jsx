@@ -21,8 +21,44 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {};
-  const handleSubmit = (e) => {};
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    // setLoading(false);
+    emailjs
+      .send(
+        "service_qlr0zth",
+        "template_6rpwczp",
+        {
+          from_name: form.name,
+          to_name: "Hardik",
+          from_email: form.email,
+          to_email: "hardik.dudeja39@gmail.com",
+          message: form.message,
+        },
+        "XgU02B4WErK6tBVI0"
+      )
+      .then(
+        () => {
+          setLoading(false);
+          alert("Thank You for your message. I will get back to you soon.");
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        },
+        (error) => {
+          setLoading(false);
+          console.log(error);
+          alert("Something went wrong. Please try again.");
+        }
+      );
+  };
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
@@ -35,7 +71,7 @@ const Contact = () => {
 
         <form
           ref={formRef}
-          onSubmit={handleSubmit()}
+          onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
