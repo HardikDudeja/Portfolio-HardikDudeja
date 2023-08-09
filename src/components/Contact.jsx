@@ -21,46 +21,8 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-
-    emailjs
-      .send(
-        "service_qlr0zth",
-        "template_wt1fqim",
-        {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
-          message: form.message,
-        },
-        "XgU02B4WErK6tBVI0"
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
-  };
+  const handleChange = (e) => {};
+  const handleSubmit = (e) => {};
 
   return (
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
